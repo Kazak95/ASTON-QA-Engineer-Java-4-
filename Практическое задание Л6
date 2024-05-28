@@ -1,0 +1,90 @@
+// Вкладка Main________________________________________________________
+
+public class Main {
+    public static void main(String[] args) {
+        massiv();
+        }
+        public static void massiv() {
+        Employee[] empCorp = new Employee[5];
+        empCorp[0] = new Employee("Иванов Иван Иванович", "Директор", "ivivan@mail.ru", "999111111","150000","44");
+        empCorp[1] = new Employee("Петров Петр Петрович", "Бухглатер", "petrov@mail.ru", "999222222","100000","33");
+        empCorp[2] = new Employee("Смирнов Смирня Смиронович", "Кадровичка", "smirnov@mail.ru", "999333333","50000","22");
+        empCorp[3] = new Employee("Попов Поп Попкович", "Менеджер продаж", "popov@mail.ru", "999444444","25000","18");
+        empCorp[4] = new Employee("Кузнецов Кузьмин Кузьминович ", "Кузнец своего счастья", "kyznec@mail.ru", "999555555","125","58");
+
+        empCorp[4].info();
+    }
+}
+
+// Вкладка Employee________________________________________________________
+
+public class Employee {
+    private  String fio;
+    private  String jobTitle;
+    private  String email;
+    private  String phoneNumber;
+    private  String salary;
+    private  String age;
+
+    public Employee(String fio, String jobTitle, String email, String phoneNumber,
+                    String salary, String age) {
+        this.fio = fio;
+        this.jobTitle = jobTitle;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.salary = salary;
+        this.age = age;
+    }
+    public void info() {
+        System.out.println("ФИО: " + fio + " Должность: " + jobTitle + " Почта: " + email +
+                " Номер телефона: " + phoneNumber + " Зарплата: " + salary + " Возвраст: " + age);
+    }
+}
+
+// Вкладка Park________________________________________________________3 ЗАДАНИЕ 
+// как поняла суть задания, нам нужно создать класс с подклассом,
+// где создать конструктор массива, куда со временем будут вносится значания, которые его заполнят
+
+public class Park {
+    public static class Attraccions {
+        private String infoAttrac;
+        private String timeWork;
+        private String costAttrac;
+
+        public Attraccions (String infoAttrac, String timeWork, String costAttrac) {
+            this.infoAttrac = infoAttrac;
+            this.timeWork = timeWork;
+            this.costAttrac = costAttrac;
+        }
+        // В Java геттер и сеттер — это два обычных метода,
+        // которые используются для получения значения поля класса или его изменения.
+        //Поскольку в классе перемнная является private,
+        // то обратиться к ней напрямую за пределами данного класса не получится (обезопасит изменения извне)
+        // Чтобы таких проблем не было, внешний код должен вызывать
+        // геттер getПЕРЕМЕННАЯ() и сеттер setПЕРЕМЕННАЯ(), чтобы получить или обновить значение переменной
+        //Итак, сеттер — это метод, который изменяет (устанавливает; от слова set) значение поля.
+        // А геттер — это метод, который возвращает (от слова get) нам значение какого-то поля.
+        //И на основании этой информации - я решила выполнить это задание через них.
+//1
+        public String getInfoAttrac() {
+            return infoAttrac;
+        }
+        public void SetInfoAttrac(String infoAttrac){
+            this.infoAttrac = infoAttrac;
+        }
+//2
+        public String getTimeWork() {
+            return timeWork;
+        }
+        public void SetTimeWork(String timeWork){
+            this.timeWork = timeWork;
+        }
+//3
+        public String getCostAttrac() {
+            return costAttrac;
+        }
+        public void SetCostAttrac(String costAttrac){
+            this.costAttrac = costAttrac;
+        }
+    }
+}
